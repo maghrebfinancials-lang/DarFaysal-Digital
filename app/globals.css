@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: "Cormorant Garamond";
+  --font-body: "Manrope";
+  --background: 36 33% 97%;
+  --foreground: 24 10% 8%;
+  --card: 0 0% 100%;
+  --card-foreground: 24 10% 8%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 24 10% 8%;
+  --primary: 0 0% 4%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 39 38% 95%;
+  --secondary-foreground: 24 10% 8%;
+  --muted: 34 18% 90%;
+  --muted-foreground: 27 8% 38%;
+  --accent: 45 63% 52%;
+  --accent-foreground: 24 10% 8%;
+  --border: 30 16% 84%;
+  --input: 30 16% 84%;
+  --ring: 45 63% 52%;
+  --success: 143 48% 36%;
+}
+
+* {
+  @apply border-border;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background font-sans text-foreground antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.12), transparent 22%),
+    linear-gradient(180deg, rgba(255,255,255,0.84), rgba(249,247,243,1));
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 10, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black 22%, transparent 82%);
+}
+
+a {
+  @apply transition-colors;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.24);
+  color: #0a0a0a;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.34) 42%, rgba(10,10,10,0.78) 100%);
+}
+
+.glass-panel {
+  @apply border border-white/15 bg-white/10 backdrop-blur-xl;
+}
+
+.section-space {
+  @apply py-16 md:py-24;
+}
+
+.editorial-panel {
+  @apply rounded-[32px] border border-white/10 bg-white/8 backdrop-blur-xl;
+}
+
+.luxury-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.9), transparent);
+}
